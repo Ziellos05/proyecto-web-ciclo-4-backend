@@ -1,0 +1,331 @@
+    HU_001
+
+mutation Register($input: RegisterInput!) {
+  register(input: $input) {
+    _id
+  }
+}
+
+{
+  "input": {
+    "email": "",
+    "documentId": 0,
+    "name": "",
+    "lastName": "",
+    "role": "ADMIN",
+    "password": ""
+  }
+}
+
+    HU_002
+
+query Query($email: String!, $password: String!) {
+  login(email: $email, password: $password)
+}
+
+{
+  "email": "",
+  "password": ""
+}
+
+Se obtiene un valor de login, que irá al header en la sección de Authorization
+
+    HU_003
+
+mutation UpdateUser($input: UpdateInput!) {
+  updateUser(input: $input) {
+    name
+  }
+}
+
+{
+  "input": {
+    "email": "",
+    "documentId": 0,
+    "name": "",
+    "lastName": "",
+    "role": "ADMIN",
+    "password": ""
+  }
+}
+
+    HU_004
+
+query AllUsers {
+  allUsers {
+    _id
+    email
+    documentId
+    name
+    lastName
+    fullName
+    role
+    status
+  }
+}
+
+    HU_005
+
+mutation UpdateUserStatus($input: UpdateUserStatusInput!) {
+  updateUserStatus(input: $input) {
+    status
+  }
+}
+
+{
+  "input": {
+    "email":"",
+    "status":"AUTHORIZED"
+  }
+}
+
+    HU_006
+
+query AllProjects {
+  allProjects {
+    _id
+    name
+    generalObjective
+    specificObjectives
+    budget
+    startDate
+    endDate
+    leader_id
+    status
+    phase
+    leader {
+      name
+    }
+  }
+}
+
+    HU_007
+
+mutation UpdateProjectPhase($input: UpdateProjectPhaseInput!) {
+  updateProjectPhase(input: $input) {
+    phase
+  }
+}
+
+{
+  "input": {
+    "name": "",
+    "phase": "IN_PROGRESS"
+  }
+}
+
+    HU_008
+
+mutation UpdateProjectStatus($input: UpdateProjectStatusInput!) {
+  updateProjectStatus(input: $input) {
+    status
+  }
+}
+
+{
+  "input": {
+    "name":"",
+    "status":"INACTIVE"
+  }
+}
+
+    HU_009
+
+mutation UpdateProjectPhase($input: UpdateProjectPhaseInput!) {
+  updateProjectPhase(input: $input) {
+    phase
+  }
+}
+
+{
+  "input": {
+    "name": "",
+    "phase": "ENDED"
+  }
+}
+
+    HU_010
+
+query AllStudents {
+  allStudents {
+    name
+  }
+}
+
+    HU_011
+
+mutation UpdateUserStatus($input: UpdateUserStatusInput!) {
+  updateUserStatus(input: $input) {
+    status
+  }
+}
+
+
+{
+  "input": {
+    "email": "student4@mail.com",
+    "status": "AUTHORIZED"
+  }
+}
+
+    HU_012
+
+mutation NewProject($input: NewProjectInput!) {
+  newProject(input: $input) {
+    name
+  }
+}
+
+{
+  "input": {
+    "name":"",
+    "generalObjective":"",
+    "specificObjectives":[],
+    "budget":0
+    "startDate": "MM/DD/AAAA HH:MM",
+    "endDate": "MM/DD/AAAA HH:MM"
+  }
+}
+
+    HU_013
+
+query LeaderProjects {
+  leaderProjects {
+    name
+  }
+}
+
+    HU_014
+
+mutation UpdateProject($input: UpdateProjectInput!) {
+  updateProject(input: $input) {
+    _id
+  }
+}
+
+{
+  "input": {
+    "_id": "",
+    "name": "",
+    "generalObjective": "",
+    "specificObjectives": [],
+    "budget": 0
+  }
+}
+
+    HU_015
+
+query LeaderEnrollments {
+  leaderEnrollments {
+    project {
+      _id
+    }
+    student {
+      _id
+    }
+    status
+  }
+
+    HU_016
+
+mutation UpdateEnrollmentStatus($input: UpdateEnrollmentStatusInput!) {
+  updateEnrollmentStatus(input: $input) {
+    _id
+  }
+}
+
+{
+  "input": {
+    "_id":"",
+    "status": ""
+  }
+}
+
+    HU_017
+
+query LeaderProject($id: ID!) {
+  leaderProject(_id: $id) {
+    _id
+  }
+}
+
+{
+  "id": ""
+}
+
+    HU_018
+
+mutation UpdateAdvanceComments($input: UpdateAdvanceCommentsInput!) {
+  updateAdvanceComments(input: $input) {
+    comments
+  }
+}
+
+{
+  "input": {
+    "_id": "",
+    "comments": ""
+  }
+}
+
+    HU_019
+
+query AllProjects {
+  allProjects {
+    name
+  }
+}
+
+    HU_020
+
+mutation NewEnrollment($projectId: ID!) {
+  newEnrollment(project_id: $projectId) {
+    _id
+  }
+}
+
+{
+  "projectId": ""
+}
+
+    HU_021
+
+query StudentProjectAdvances($projectId: ID!) {
+  studentProjectAdvances(projectID: $projectId) {
+    _id
+  }
+}
+
+{
+  "projectId": ""
+}
+
+    HU_022
+
+mutation NewAdvance($input: NewAdvanceInput!) {
+  newAdvance(input: $input) {
+    _id
+  }
+}
+
+{
+  "input": {
+    "projectID":"",
+    "advance": ""
+  }
+}
+
+    HU_023
+
+mutation UpdateAdvanceAdvance($input: UpdateAdvanceAdvanceInput!) {
+  updateAdvanceAdvance(input: $input) {
+    _id
+  }
+}
+
+{
+  "input": {
+    "_id": "",
+    "advance": ""
+  }
+}

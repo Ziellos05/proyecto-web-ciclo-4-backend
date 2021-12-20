@@ -1,0 +1,251 @@
+Historia de usuario: HU_001
+
+Como usuario
+
+Dado que voy a ingresar al sistema de gestión de proyectos
+
+Cuando necesite registrarme en el sistema
+
+Entonces podré ingresar los datos de registro (Incluyendo elegir el rol al que aspiro)
+
+
+Historia de usuario: HU_002
+
+Como usuario autorizado
+
+Dado que voy a ingresar al sistema de gestión de proyectos
+
+Cuando necesite autenticarme en el sistema
+
+Entonces podré ingresar mi correo y contraseña para ser validados
+
+
+Historia de usuario: HU_003
+
+Como usuario
+
+Dado que ingresé al sistema de gestión de proyectos
+
+Cuando necesite actualizar la información personal
+
+Entonces podré ingresar los datos que deseo actualizar
+
+
+Historia de usuario: HU_004
+
+Como administrador
+
+Dado que ingresé al sistema de gestión de proyectos
+
+Cuando requiera ver la lista de los usuarios registrados en la plataforma (Tanto autorizados como no autorizados)
+
+Entonces podré ver la información de los usuarios registrados en la plataforma
+
+
+Historia de usuario: HU_005
+
+Como administrador
+
+Dado que estoy viendo la lista de los usuarios registrados en la plataforma
+
+Cuando requiera aceptar un usuario en la plataforma
+
+Entonces podré cambiar el estado del usuario
+
+
+Historia de usuario: HU_006
+
+Como administrador 
+
+Dado que ingresé al sistema de gestión de proyectos
+
+Cuando requiera ver la lista de proyectos registrados en la plataforma
+
+Entonces podré ver la lista de los proyectos registrados en la plataforma
+
+
+Historia de usuario: HU_007
+
+Como administrador
+
+Dado que estoy viendo la lista de los proyectos registrados en la plataforma
+
+Cuando requiera aprobar la creación de un proyecto
+
+Entonces podré  actualizar el estado del  proyecto
+
+
+Historia de usuario: HU_008
+
+Como administrador
+
+Dado que estoy viendo la lista de los proyectos registrados en la plataforma
+
+Cuando requiera activar o inactivar un proyecto
+
+Entonces podré  actualizar el estado del  proyecto
+
+
+Historia de usuario: HU_009
+
+Como administrador
+
+Dado que estoy viendo la lista de los proyectos registrados en la plataforma
+
+Cuando requiera cambiar la fase de un proyecto de “En desarrollo” a “Terminado”
+
+Entonces podré  actualizar la fase del  proyecto.
+
+
+Historia de usuario: HU_010
+
+Como líder
+
+Dado que ingresé al sistema de gestión de proyectos
+
+Cuando requiera ver la lista de los estudiantes registrados en la plataforma (Tanto autorizados como no autorizados)
+
+Entonces podré ver la información de los estudiantes registrados en la plataforma
+
+
+Historia de usuario: HU_011
+
+Como líder
+
+Dado que que estoy viendo la lista de los estudiantes registrados en la plataforma
+
+Cuando requiera aceptar un estudiante en la plataforma
+
+Entonces podré cambiar el estado del estudiante de “Pendiente” a “Autorizado”
+
+
+Historia de usuario: HU_012
+
+Como líder
+
+Dado que ingresé al sistema de gestión de proyectos
+
+Cuando requiera liderar un nuevo proyecto
+
+Entonces podré crear un nuevo proyecto
+
+
+Historia de usuario: HU_013
+
+Como líder
+
+Dado que ingresé al sistema de gestión de proyectos
+
+Cuando requiera ver los proyectos que lidero (Tanto los que están en estado “Activo” como “Inactivo”).
+
+Entonces sólo podré listar los proyectos que tengo a cargo
+
+
+Historia de usuario: HU_014
+
+Como líder
+
+Dado que estoy viendo la lista de los proyectos que he registrado en la plataforma
+
+Cuando requiera actualizar los datos de uno de los proyectos que lidero y que está en estado “Activo”
+
+Entonces podré editar la información relacionada al proyecto cuya información necesito actualizar (Solamente puede actualizar: Nombre del proyecto, los objetivos generales, específicos y el presupuesto)
+
+
+Historia de usuario: HU_015
+
+Como líder
+
+Dado que ingresé al sistema de gestión de proyectos
+
+Cuando requiera revisar las solicitudes pendientes por aceptar o rechazar de estudiantes de inscripción a mis proyectos
+
+Entonces podré listar las solicitudes realizadas por los estudiantes.
+
+
+Historia de usuario: HU_016
+
+Como líder
+
+Dado que estoy viendo la lista de solicitudes de inscripción a los proyectos que lidero
+
+Cuando requiera cambiar el estado a la solicitudes
+
+Entonces podré aceptar o rechazar sus inscripciones
+
+
+Historia de usuario: HU_017
+
+Como líder
+
+Dado que estoy viendo la lista de los proyectos que he registrado en la plataforma
+
+Cuando necesite realizar una revisión a uno de mis proyectos
+
+Entonces podré listar la información relacionada al proyecto que deseo revisar (Incluyendo los avances).
+
+
+Historia de usuario: HU_018
+
+Como líder
+
+Dado que estoy viendo la lista de los avances registrados en uno de los proyectos que lidero
+
+Cuando necesite agregar observaciones a un avance en uno de mis proyectos
+
+Entonces podré actualizar el campo de observaciones del avance seleccionado.
+
+
+Historia de usuario: HU_019
+
+Como estudiante
+
+Dado que ingresé al sistema de gestión de proyectos
+
+Cuando requiera ver la lista de proyectos registrados en la plataforma
+
+Entonces podré ver la lista de los proyectos registrados en la plataforma
+
+
+Historia de usuario: HU_020
+
+Como estudiante
+
+Dado que estoy viendo la lista de los proyectos registrados en la plataforma
+
+Cuando requiera inscribirme en un proyecto
+
+Entonces podré generar una solicitud de inscripción al proyecto
+
+
+Historia de usuario: HU_021
+
+Como estudiante
+
+Dado que mi inscripción a un proyecto fue aceptada
+
+Cuando requiera listar los avances de un proyecto en el que estoy inscrito
+
+Entonces podré ver la lista de los avances del proyecto registrados
+
+
+Historia de usuario: HU_022
+
+Como estudiante
+
+Dado que estoy viendo la lista de proyectos
+
+Cuando requiera registrar avances a un proyecto en el que estoy inscrito (Y este se encuentra en estado activo)
+
+Entonces podré ingresar la descripción de mi avance en el proyecto
+
+
+Historia de usuario: HU_023
+
+Como estudiante
+
+Dado estoy viendo la lista de avances de un proyecto
+
+Cuando requiera actualizar la información de un avance
+
+Entonces podré modificar la descripción del avance

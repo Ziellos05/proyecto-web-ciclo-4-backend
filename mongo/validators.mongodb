@@ -1,0 +1,247 @@
+// MongoDB Playground
+
+const database = 'maindb';
+
+// Set database
+use(database);
+
+// Drop databases directly for issues with let collection
+// db.users.drop();
+// db.projects.drop();
+
+// // Set collection
+// let collection = 'users';
+
+// // Drop users collection
+// db.getCollection(collection).drop();
+
+// // Create a new collection for users.
+// db.createCollection(collection, {
+//   validator:{
+//     $jsonSchema:{
+//       required: ['email', 'documentId', 'name', 'lastname', 'fullname', 'role', 'status'],
+//       properties: {
+//         email:{
+//           bsonType: 'string',
+//         },
+//         documentId:{
+//           bsonType: 'long',
+//         },
+//         name:{
+//           bsonType: 'string',
+//         },
+//         lastname:{
+//           bsonType: 'string',
+//         },
+//         fullname:{
+//           bsonType: 'string',
+//         },
+//         role:{
+//           enum: ['admin', 'leader', 'student'],
+//         },
+//         status:{
+//           enum: ['pending', 'authorized', 'unauthorized'],
+//         },
+//         password: {
+//           bsonType: 'string',
+//         },
+//       },
+//     }
+//   }
+// });
+
+// // Create unique index for email and documentId
+// db.getCollection(collection).createIndex({ email: 1 }, { unique: true });
+// db.getCollection(collection).createIndex({ documentId: 1 }, { unique: true});
+
+// const usersdb = [
+//   {
+//   'email':'pepemail@mail.com', 
+//   'documentId': Long(123094093), 
+//   'name': 'Pepito', 
+//   'lastname': 'Perez', 
+//   'fullname': 'Pepito Perez',
+//   'role': 'leader', 
+//   'status':'authorized', 
+//   'password':'asleilis'
+//   },
+//   {
+//   'email':'LiuKhan@mail.com', 
+//   'documentId': Long(19999893), 
+//   'name': 'Liu', 
+//   'lastname': 'Khan', 
+//   'fullname': 'Liu Khan',
+//   'role': 'student', 
+//   'status':'pending', 
+//   'password':'password123'
+//   },
+//   {
+//   'email':'marioPac@mail.com', 
+//   'documentId': Long(111111111122), 
+//   'name': 'Mario', 
+//   'lastname': 'Pacman', 
+//   'fullname': 'Mario Pacman',
+//   'role': 'admin', 
+//   'status':'authorized', 
+//   'password':'MammaWaka'
+//   }
+// ];
+
+// db.getCollection(collection).insertMany(usersdb);
+
+// // =========================================================
+// // Create a new collection for projects.
+// collection = 'projects';
+
+
+// db.getCollection(collection).drop();
+
+// db.createCollection(collection, {
+//   validator:{
+//     $jsonSchema:{
+//       required: ['name', 'generalObjective', 'specificObjectives', 'budget', 'startDate', 'endDate', 'leader_id', 'status'],
+//       properties: {
+//         name:{
+//           bsonType: 'string',
+//         },
+//         generalObjective:{
+//           bsonType: 'string',
+//         },
+//         specificObjectives:{
+//           bsonType: 'array',
+//         },
+//         budget:{
+//           bsonType: 'decimal',
+//         },
+//         startDate:{
+//           bsonType: 'date',
+//         },
+//         endDate:{
+//           bsonType: 'date',
+//         },
+//         leader_id:{
+//           bsonType: 'objectId',
+//         },
+//         leaderName:{
+//           bsonType: 'string',
+//         },
+//         status:{
+//           enum: ['active', 'inactive'],
+//         },
+//         phase:{
+//           enum: ['started', 'in progress', 'finished'],
+//         },
+//       }
+//     }
+//   }
+// });
+
+// const projectsdb = [
+//     {
+//     "name": "Project 1",
+//     "generalObjective": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl augue, ultrices non placerat maximus, feugiat nec mauris.",
+//     "specificObjectives": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit", "Praesent nisl augue, ultrices non placerat maximus, feugiat nec mauris."],
+//     "budget": Decimal128('20000000'),
+//     "startDate": new Date(),
+//     "endDate": new Date(new Date().getTime() + 60*24*60*60000),
+//     "leader_id": db.users.findOne({email: 'pepemail@mail.com'})._id,
+//     "leader_name": db.users.findOne({email: 'pepemail@mail.com'}).fullname,
+//     "status": "inactive",
+//   },
+//     {
+//     "name": "Project 2",
+//     "generalObjective": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl augue, ultrices non placerat maximus, feugiat nec mauris.",
+//     "specificObjectives": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit", "Praesent nisl augue, ultrices non placerat maximus, feugiat nec mauris."],
+//     "budget": Decimal128('50000000'),
+//     "startDate": new Date(),
+//     "endDate": new Date(new Date().getTime() + 60*24*60*60000),
+//     "leader_id": db.users.findOne({email: 'marioPac@mail.com'})._id,
+//     "leader_name": db.users.findOne({email: 'marioPac@mail.com'}).fullname,
+//     "status": "inactive",
+//   },
+//     {
+//     "name": "Project 3",
+//     "generalObjective": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl augue, ultrices non placerat maximus, feugiat nec mauris.",
+//     "specificObjectives": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit", "Praesent nisl augue, ultrices non placerat maximus, feugiat nec mauris."],
+//     "budget": Decimal128('21000000'),
+//     "startDate": new Date(),
+//     "endDate": new Date(new Date().getTime() + 60*24*60*60000),
+//     "leader_id": db.users.findOne({email: 'pepemail@mail.com'})._id,
+//     "leader_name": db.users.findOne({email: 'pepemail@mail.com'}).fullname,
+//     "status": "inactive",
+//   },
+//     {
+//     "name": "Project 4",
+//     "generalObjective": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl augue, ultrices non placerat maximus, feugiat nec mauris.",
+//     "specificObjectives": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit", "Praesent nisl augue, ultrices non placerat maximus, feugiat nec mauris."],
+//     "budget": Decimal128('100000000'),
+//     "startDate": new Date(),
+//     "endDate": new Date(new Date().getTime() + 60*24*60*60000),
+//     "leader_id": db.users.findOne({email: 'marioPac@mail.com'})._id,
+//     "leader_name": db.users.findOne({email: 'marioPac@mail.com'}).fullname,
+//     "status": "inactive",
+//   },
+
+// ]
+
+
+// db.getCollection(collection).insertMany(projectsdb);
+
+
+// =========================================================
+// Create a new collection for advances.
+
+collection = 'advances';
+
+db.getCollection(collection).drop();
+
+db.createCollection(collection, {
+  validator:{
+    $jsonSchema: {
+      required: ['projectID', 'userID', 'advance', 'date'],
+      properties: {
+        projectID: {
+          bsonType: 'objectId',
+        },
+        userID: {
+          bsonType: 'objectId',
+        },
+        advance: {
+          bsonType: 'string',
+        },
+          date: {
+          bsonType: 'date',
+        },
+      }
+    }
+  }
+});
+
+db.advances.insertMany([
+  {
+  projectID: ObjectId("61a13a6b22fb598ea2b785c2"),
+  userID: ObjectId("61a13a6b22fb598ea2b785bf"),
+  advance: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl augue, ultrices non placerat maximus, feugiat nec mauris.",
+  date: new Date(),
+},
+  {
+  projectID: ObjectId("61a13a6b22fb598ea2b785c3"),
+  userID: ObjectId("61a13a6b22fb598ea2b785c0"),
+  advance: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl augue, ultrices non placerat maximus, feugiat nec mauris.",
+  date: new Date(),
+
+},
+{
+  projectID: ObjectId("61a13a6b22fb598ea2b785c4"),
+  userID: ObjectId("61a13a6b22fb598ea2b785c1"),
+  advance: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl augue, ultrices non placerat maximus, feugiat nec mauris.",
+  date: new Date(),
+},
+  {
+  projectID: ObjectId("61a13a6b22fb598ea2b785c2"),
+  userID: ObjectId("61a13a6b22fb598ea2b785c1"),
+  advance: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl augue, ultrices non placerat maximus, feugiat nec mauris.",
+  date: new Date(),
+
+},
+]);
